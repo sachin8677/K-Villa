@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Buy Property{% endblock %}
+
+{% block content %}
+<style>
+    .card {
+        background-color: #333;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .card-text, .card-title, h1, h5, p {
+        color: #FFFFFF; /* or color: white; */
+    }
+    .btn-success, .btn-secondary {
+        background-color: #007bff; /* or background-color: blue; */
+        border-color: #007bff; /* or border-color: blue; */
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+<h1>Buy Property: {{ property.title }}</h1>
+{% if property.image %}
+    <img src="{{ property.image.url }}" alt="{{ property.title }}" class="img-fluid">
+{% endif %}
+<p><strong>Price:</strong> Rs {{ property.price }}</p>
+<p><strong>Location:</strong> {{ property.location }}</p>
+
+<form method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to buy this property?</p>
+    <button type="submit" class="btn btn-success">Confirm Purchase</button>
+    <a href="{% url 'property_detail' property.pk %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

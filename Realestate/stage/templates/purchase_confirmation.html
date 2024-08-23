@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Purchase Confirmation{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #333; /* set background color to dark gray */
+    }
+    .white-text {
+        color: #FFFFFF; /* set text color to white */
+    }
+</style>
+
+<h1 class="white-text">Purchase Confirmation</h1>
+<div class="alert alert-success">
+    <p class="white-text">Congratulations! You have successfully purchased {{ property.title }}.</p>
+</div>
+<h2 class="white-text">Property Details:</h2>
+{% if property.image %}
+    <img src="{{ property.image.url }}" alt="{{ property.title }}" class="img-fluid">
+{% endif %}
+<p class="white-text"><strong>Title:</strong> {{ property.title }}</p>
+<p class="white-text"><strong>Price:</strong> Rs {{ property.price }}</p>
+<p class="white-text"><strong>Location:</strong> {{ property.location }}</p>
+<a href="{% url 'property_list' %}" class="btn btn-primary white-text">Back to Listings</a>
+{% endblock %}

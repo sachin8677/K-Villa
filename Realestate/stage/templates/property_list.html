@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}Property Listings{% endblock %}
+{% block content %}
+<h1>Property Listings</h1>
+
+<style>
+    .card {
+        position: relative;
+    }
+    .sold-banner {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: red;
+        color: white;
+        padding: 5px 10px;
+        font-weight: bold;
+        transform: rotate(15deg);
+    }
+</style>
+
+<form method="get" action="{% url 'property_list' %}" class="mb-4">
+    <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Search by location or title" value="{{ query|default:'' }}">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </div>
+    </div>
+</form>
+
+<div class="row">
+    {% for property in properties %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            {% if property.image %}
+            <img src="{{ property.image.url }}" alt="{{ property.title }}" class="card-img-top">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ property.title }}</h5>
+                <p class="card-text">{{ property.description|truncatewords:20 }}</p>
+                <p class="card-text"><strong>Price:</strong> Rs {{ property.price }}</p>
+                <p class="card-text"><strong>Location:</strong> {{ property.location }}</p>
+                <a href="{% url 'property_detail' property.pk %}" class="btn btn-primary">View Details</a>
+                
+                {% if property.is_sold %}
+                <div class="sold-banner">SOLD</div>
+                {% endif %}
+                
+                {% if user.is_seller and property.seller == user and not property.is_sold %}
+                <form method="post" action="{% url 'mark_as_sold' property.pk %}" class="mt-2">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-warning btn-sm">Mark as Sold</button>
+                </form>
+                <a href="{% url 'edit_or_delete_property' property.pk %}" class="btn btn-secondary mt-2">Edit or Delete</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p>No properties available at the moment.</p>
+    {% endfor %}
+</div>
+{% endblock %}

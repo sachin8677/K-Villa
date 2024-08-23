@@ -1,0 +1,307 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Villa Agency - Real Estate HTML5 Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="../../static/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="../../static/assets/css/templatemo-villa-agency.css">
+    <link rel="stylesheet" href="../../static/assets/css/owl.css">
+    <link rel="stylesheet" href="../../static/assets/css/animate.css">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+<!--
+
+TemplateMo 591 villa agency
+
+https://templatemo.com/tm-591-villa-agency
+
+-->
+  </head>
+
+<body>
+  <style>
+    .main-banner .item-1 {
+      background-image: url('../../static/assets/images/b1.jpg');
+    }
+    
+    .main-banner .item-2 {
+      background-image: url('../../static/assets/images/b2.jpg');
+    }
+    
+    .main-banner .item-3 {
+      background-image: url('../../static/assets/images/b3.jpg');
+    }</style>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <div class="sub-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-8">
+          <ul class="info">
+            <li><i class="fa fa-envelope"></i> info@kvilla.com</li>
+            <li><i class="fa fa-map"></i> ernakulam,kakkanad</li>
+          </ul>
+          
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <ul class="social-links">
+            <li><a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://x.com/home?lang=en" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="#" class="logo">
+                        <h1>K.Villa</h1>
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                      <li><a href="{% url 'register_seller' %}">Register seller</a></li>
+                      <li><a href="{% url 'register_buyer' %}">Register Buyer</a></li>
+                      <li><a href="{% url 'login' %}">LogIn</a></li>
+                     </ul>   
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="main-banner">
+    <div class="owl-carousel owl-banner">
+      <div class="item item-1">
+        <div class="header-text">
+          <span class="category">KERALA, <em>alapuzha</em></span>
+          <h2>GET YOUR DREAM HOME</h2>
+        </div>
+      </div>
+      <div class="item item-2">
+        <div class="header-text">
+          <span class="category">KERALA, <em>plalkkad</em></span>
+          <h2>Get the best home in town location</h2>
+        </div>
+      </div>
+      <div class="item item-3">
+        <div class="header-text">
+          <span class="category">KERALA, <em>kannur</em></span>
+          <h2>Act Now!<br>Get the lowest price home</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="featured section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="left-image">
+            <img src="../../static/assets/images/sea.png" alt="">
+            <a href="property-details.html"><img src="../../static/assets/images/featured-icon.png" alt="" style="max-width: 60px; padding: 0px;"></a>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="section-heading">
+            <h6>| Featured</h6>
+            <h2>Best Appartment &amp; Sea view</h2>
+          </div>
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+               
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                Get <strong>the best villa</strong> in the sea side of kochi the heart of kerala with fully furnished flat and 24 hour security</div>
+              </div>
+            </div>
+            <img src="../../static/assets/images/l.png" alt="" style="max-width: 250px;">
+            
+            
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="info-table">
+            <ul>
+              <li>
+                <img src="../../static/assets/images/info-icon-01.png" alt="" style="max-width: 52px;">
+                <h4>250 m2<br><span>Total Flat Space</span></h4>
+              </li>
+              <li>
+                <img src="../../static/assets/images/info-icon-02.png" alt="" style="max-width: 52px;">
+                <h4>Contract<br><span>Contract Ready</span></h4>
+              </li>
+              <li>
+                <img src="../../static/assets/images/info-icon-03.png" alt="" style="max-width: 52px;">
+                <h4>Payment<br><span>Payment Process</span></h4>
+              </li>
+              <li>
+                <img src="../../static/assets/images/info-icon-04.png" alt="" style="max-width: 52px;">
+                <h4>Safety<br><span>24/7 Under Control</span></h4>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+          <div class="section-heading text-center">
+            <h6>| Video View</h6>
+            <h2>Get Closer View & Different Feeling</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <div class="video-frame">
+            <img src="../../static/assets/images/k.jpg" alt="">
+            <a href="https://youtu.be/guN6fFUFlOg?si=OD-OIr1ZIlxI-6E6" target="_blank"><i class="fa fa-play"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+ 
+
+  <div class="properties section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+          <div class="section-heading text-center">
+            <h6>| Properties</h6>
+            <h2>We Provide The Best Property it time for your dream to come true<br><h3>for  selling and buying please register and stay in touch with us...<br></h3></h2>
+            <br>
+            <div class="main-button">
+              <a href="{% url 'register_seller' %}">Register seller</a></li>
+              <a href="{% url 'register_buyer' %}">Register Buyer</a></li>
+              <br><br>
+              <a href="{% url 'login' %}">LogIn</a></li> 
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+  <div class="contact section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+          <div class="section-heading text-center">
+            <h2>K.VILLA</h2>
+            <br>
+            <h4>No matter what ‘home’ means to you, there is surely something nostalgic about the place we call home. </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--footer-->
+  <section class="contact-area" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="contact-content text-center">
+                   
+                    
+                    <div class="hr"></div>
+                    <h6>KERALA , ERNAKULAM near KAKKANAD.</h6>
+                    <h6>+91 7005909687<span>|</span>+0460 2345 678</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =============== 1.9 Contact Area End ====================-->
+<!-- =============== 1.9 Footer Area Start ====================-->
+<footer>
+  <section class="contact-area" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="contact-content text-center">
+                  <br><br><br><br><br><br>          
+  <div class="container">
+    <div class="col-lg-12">
+      <p>K.VILLA YOUR TRUSTED HOME PARTNER.</p>
+      
+                      <div class="contact-social">
+                        <ul>
+                          <li><a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a></li>
+                          <li><a href="https://x.com/home?lang=en" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                          <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+                          
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+</footer>
+  
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="../../static/vendor/jquery/jquery.min.js"></script>
+  <script src="../../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../../static/assets/js/isotope.min.js"></script>
+  <script src="../../static/assets/js/owl-carousel.js"></script>
+  <script src="../../static/assets/js/counter.js"></script>
+  <script src="../../static/assets/js/custom.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Mark Property as Sold</h2>
+<p>Are you sure you want to mark the property "{{ property.title }}" as sold?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm Mark as Sold</button>
+</form>
+<a href="{% url 'property_detail' property.pk %}">Cancel</a>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ property.title }}{% endblock %}
+
+{% block content %}
+<style>
+    .card {
+        background-color: #333;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .card-text, .card-title, h1, h5, p {
+        color: #FFFFFF; /* or color: white; */
+    }
+    .btn-success, .btn-secondary {
+        background-color: #007bff; /* or background-color: blue; */
+        border-color: #007bff; /* or border-color: blue; */
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <h1 class="card-title">{{ property.title }}</h1>
+                {% if property.image %}
+                    <img src="{{ property.image.url }}" alt="{{ property.title }}" class="img-fluid">
+                {% endif %}
+                <div class="card-body">
+                    <p class="card-text"><strong>Description:</strong> {{ property.description }}</p>
+                    <p class="card-text"><strong>Price:</strong> Rs {{ property.price }}</p>
+                    <p class="card-text"><strong>Location:</strong> {{ property.location }}</p>
+                    <p class="card-text"><strong>Seller:</strong> {{ property.seller.username }}</p>
+                    <p class="card-text"><strong>Listed on:</strong> {{ property.created_at|date:"F d, Y" }}</p>
+                    {% if user.is_authenticated and user.is_buyer and not property.is_sold %}
+                        <a href="{% url 'buy_property' property.pk %}" class="btn btn-success">Buy Property</a>
+                    {% endif %}
+                    <a href="{% url 'property_list' %}" class="btn btn-secondary">Back to Listings</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
